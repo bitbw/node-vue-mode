@@ -34,7 +34,7 @@ export default {
         cancelButtonText: "取消",
         type: "warning"
       }).then(async () => {
-        let res = await this.$http.delete(`/categories/${row._id}`);
+        let res = await this.$http.delete(`/rest/categories/${row._id}`);
         console.log(
           "Bowen ~ file: list.vue ~ line 38 ~ handleDelete ~ res",
           res
@@ -47,7 +47,7 @@ export default {
       });
     },
     async fetch() {
-      let res = await this.$http.get("/categories");
+      let res = await this.$http.get("/rest/categories");
       this.tableData = res.data;
     }
   },

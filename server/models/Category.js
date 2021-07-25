@@ -7,6 +7,9 @@ const Category = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Category'
     }
+},{
+    autoIndex:true,
+    id:true
 })
 
 module.exports = mongoose.model('Category', Category)

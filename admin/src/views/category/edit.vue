@@ -50,9 +50,9 @@ export default {
     async onSubmit() {
       let res;
       if (this.id) {
-        res = await this.$http.put(`/categories/${this.id}`, this.form);
+        res = await this.$http.put(`/rest/categories/${this.id}`, this.form);
       } else {
-        res = await this.$http.post("/categories", this.form);
+        res = await this.$http.post("/rest/categories", this.form);
       }
       console.log("Bowen ~ file: edit.vue ~ line 34 ~ onSubmit ~ res", res);
       this.$router.push({
@@ -60,11 +60,11 @@ export default {
       });
     },
     async fetch() {
-      let res = await this.$http.get(`/categories/${this.id}`);
+      let res = await this.$http.get(`/rest/categories/${this.id}`);
       this.form = res.data;
     },
     async fetchAll() {
-      let res = await this.$http.get(`/categories`);
+      let res = await this.$http.get(`/rest/categories`);
       this.categoryList = res.data;
     }
   },

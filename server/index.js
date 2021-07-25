@@ -11,6 +11,7 @@ app.use(express.json())
 require('./plugins/db')(app)
 // admin routers
 require('./routes/admin/index')(app)
+require('./routes/admin/test')(app)
 
 
 app.listen(port, (err) => {
